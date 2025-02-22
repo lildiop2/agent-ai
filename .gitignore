@@ -128,3 +128,14 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+
+###custom
+.env
+**/database/users.js
+**/database/entities/users.json
+test*
+workflow.png
+workflow_v2.png
+workflow_v3.png
+node_modules

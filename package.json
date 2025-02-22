@@ -1,0 +1,29 @@
+{
+  "name": "agent-ai-app",
+  "version": "1.0.0",
+  "description": "A simple agent with langchain",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon -r dotenv/config src/test.js",
+    "dev": "nodemon -r dotenv/config --ignore database/entities/ src/app.js",
+    "start": "node -r dotenv/config src/app.js"
+  },
+  "keywords": [
+    "agent",
+    "ia",
+    "langchain",
+    "chatbot"
+  ],
+  "author": "Abdul Kevin Alexis",
+  "license": "ISC",
+  "dependencies": {
+    "@langchain/community": "^0.3.30",
+    "@langchain/core": "^0.3.40",
+    "@langchain/langgraph": "^0.2.46",
+    "@langchain/ollama": "^0.2.0",
+    "@langchain/openai": "^0.4.4",
+    "dotenv": "^16.4.7",
+    "tslab": "^1.0.22"
+  }
+}

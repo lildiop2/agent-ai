@@ -1,0 +1,71 @@
+# Abdul Kevin Alexis - Consultoria em Desenvolvimento de Software
+
+## Sobre Nós
+
+Somos uma consultoria especializada no desenvolvimento de software, oferecendo soluções sob medida para empresas que buscam inovação e eficiência. Com vasta experiência em engenharia de software, integração de sistemas e automação de processos, ajudamos nossos clientes a alcançarem seus objetivos de negócio por meio de tecnologia de ponta.
+
+Nosso objetivo é fornecer soluções tecnológicas personalizadas, garantindo desempenho, escalabilidade e segurança. Trabalhamos com diferentes setores, incluindo telecomunicações, financeiro, tecnologia da informação e startups, ajudando empresas a inovar e se destacar no mercado.
+
+## Serviços Oferecidos
+
+### Desenvolvimento Full-Stack
+
+- Criação de aplicações completas, do frontend ao backend.
+- Tecnologias: Java, JavaScript, Node.js, Express, Vue.js.
+- Arquitetura escalável utilizando boas práticas de Clean Code e SOLID.
+- Desenvolvimento de APIs RESTful e GraphQL eficientes e bem documentadas.
+- Implementação de autenticação e controle de acesso seguro.
+
+### Integração de Sistemas e APIs
+
+- Conectamos sistemas como ERPs, CRMs e plataformas de BI para um fluxo de informações otimizado.
+- Experiência com protocolos de comunicação e integração com APIs.
+- Redução de redundância e automação de processos empresariais.
+- Desenvolvimento de middleware para integração entre sistemas legados e novas tecnologias.
+- Implementação de Webhooks e eventos assíncronos para melhorar a comunicação entre sistemas.
+
+### Consultoria em VoIP e Comunicação Integrada
+
+- Implementação e suporte a sistemas VoIP para empresas de diversos portes.
+- Provisionamento de usuários automatizado com BroadWorks e Webex APIs.
+- Suporte técnico especializado em SIP e troubleshooting avançado.
+- Monitoramento e otimização de redes VoIP para garantir qualidade de serviço (QoS).
+- Configuração de PBX e centrais de atendimento para call centers.
+
+### Automação e Gestão de Processos
+
+- Desenvolvimento de soluções ECM e BPM com Sydle One e JavaScript.
+- Criação de fluxos de trabalho personalizados para empresas.
+- Otimização de gestão documental e processos internos.
+- Implementação de automação para reduzir tarefas manuais e aumentar a produtividade.
+- Consultoria para escolha das melhores ferramentas de automação de processos.
+
+### Infraestrutura e Containerização
+
+- Configuração e otimização de ambientes com Docker e Kubernetes.
+- Arquitetura modular e escalável para aplicações empresariais.
+- Gerenciamento de deploys automatizados com CI/CD.
+- Monitoramento e logging avançado para detecção e correção de falhas.
+- Consultoria para migração de aplicações legadas para ambientes modernos e escaláveis.
+
+## Diferenciais
+
+- **Experiência Comprovada**: Atuação em empresas como LEVTY e Método Telecom, desenvolvendo soluções robustas e escaláveis.
+- **Metodologias Ágeis**: Utilização de Scrum e Kanban para garantir entregas eficientes e organizadas.
+- **Foco em Resultados**: Desenvolvimento de sistemas que otimizam processos e reduzem custos operacionais.
+- **Suporte Personalizado**: Atendimento próximo e personalizado para entender e atender às necessidades do seu negócio.
+- **Segurança e Conformidade**: Implementação de boas práticas para garantir a proteção de dados e conformidade com regulamentações como LGPD e GDPR.
+- **Inovação Contínua**: Uso das tecnologias mais recentes para manter seu negócio competitivo no mercado.
+
+## Contato
+
+📍 Localização: Belo Horizonte, Minas Gerais, Brasil  
+📞 Telefone: +55 31 99100-0150  
+📧 E-mail: [lildiop2@gmail.com](mailto:lildiop2@gmail.com)  
+🌐 Portfólio: [lildiop2.github.io](https://lildiop2.github.io/)  
+📝 Blog: [vinaprannakem.com](https://vinaprannakem.com/)  
+💼 LinkedIn: [linkedin.com/in/abdul-kevin-alexis](https://www.linkedin.com/in/abdul-kevin-alexis/)
+
+### Disponibilidade
+
+Horário de funcionamento: **segunda a sexta-feira, das 8h às 17h**. Entre em contato para saber como podemos ajudar sua empresa a crescer com soluções tecnológicas eficientes!
