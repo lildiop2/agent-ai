@@ -1,7 +1,7 @@
 import { tool } from "@langchain/core/tools";
 import { z } from "zod";
 import { createEmail } from "../database/emails.js";
-import { colorLog } from "../utils.js";
+import { colorLog } from "../utils/helper.js";
 
 /**
  * Tool para enviar e-mail

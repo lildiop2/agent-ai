@@ -19,7 +19,7 @@ import { fileURLToPath } from "url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 import { toolNode, tools } from "./tools/index.js";
 import { openaiLLM as model } from "./model.js";
-import { colorLog, readData } from "./utils.js";
+import { colorLog, readData } from "./utils/helper.js";
 const promptTxt = readData(join(__dirname, "prompt.txt"));
 const EXAMPLES = `
 {"name":"send_email_function", "parameters": {"type":"Appointment Confirmation", "to":"client@example.com", "subject":"Appointment Confirmed", "body":"Your appointment has been confirmed for February 20, 2025, at 10:00 AM."}}

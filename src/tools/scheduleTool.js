@@ -1,7 +1,7 @@
 import { tool } from "@langchain/core/tools";
 import { optional, z } from "zod";
 import { createEvent, deleteEvent, getAllEvents } from "../database/events.js";
-import { getNextAvailableDates, colorLog } from "../utils.js";
+import { getNextAvailableDates, colorLog } from "../utils/helper.js";
 // Tool para agendamento de eventos
 export const makeAnAppointmentTool = tool(
   async ({ clientEmail, title, date, time }) => {

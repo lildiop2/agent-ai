@@ -7,7 +7,8 @@
   "scripts": {
     "test": "nodemon -r dotenv/config src/test.js",
     "dev": "nodemon -r dotenv/config --ignore database/entities/ src/app.js",
-    "start": "node -r dotenv/config src/app.js"
+    "start": "node -r dotenv/config src/app.js",
+    "embed": "nodemon -r dotenv/config src/database/embeddings/embed.js"
   },
   "keywords": [
     "agent",
@@ -23,7 +24,9 @@
     "@langchain/langgraph": "^0.2.46",
     "@langchain/ollama": "^0.2.0",
     "@langchain/openai": "^0.4.4",
+    "@wppconnect-team/wppconnect": "^1.35.2",
     "dotenv": "^16.4.7",
-    "tslab": "^1.0.22"
+    "tslab": "^1.0.22",
+    "winston-daily-rotate-file": "^5.0.0"
   }
 }
