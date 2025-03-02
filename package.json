@@ -5,10 +5,17 @@
   "type": "module",
   "main": "app.js",
   "scripts": {
-    "test": "nodemon -r dotenv/config src/test.js",
+    "test": "nodemon -r dotenv/config src/test2.js",
     "dev": "nodemon -r dotenv/config --ignore database/entities/ src/app.js",
     "start": "node -r dotenv/config src/app.js",
     "embed": "nodemon -r dotenv/config src/database/embeddings/embed.js"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "database/entities/*.json",
+      "logs/**",
+      "userDataDir/**"
+    ]
   },
   "keywords": [
     "agent",
@@ -19,6 +26,7 @@
   "author": "Abdul Kevin Alexis",
   "license": "ISC",
   "dependencies": {
+    "@google-cloud/local-auth": "^2.1.0",
     "@langchain/community": "^0.3.30",
     "@langchain/core": "^0.3.40",
     "@langchain/langgraph": "^0.2.46",
@@ -26,7 +34,11 @@
     "@langchain/openai": "^0.4.4",
     "@wppconnect-team/wppconnect": "^1.35.2",
     "dotenv": "^16.4.7",
+    "googleapis": "^105.0.0",
     "tslab": "^1.0.22",
     "winston-daily-rotate-file": "^5.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }

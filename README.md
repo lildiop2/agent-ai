@@ -1,87 +1,93 @@
-# LangGraph Agent: Automação de Atendimento com LLM
+# LangGraph Agent: Automated Customer Service with LLM
 
-## 📌 Sobre o Projeto
+## 📌 About the Project
 
-Este projeto é um **Proof of Concept (PoC)** de um agent de atendimento desenvolvido com **Node.js**, **LangChain** e **LangGraph**. O objetivo principal é criar um agente capaz de facilitar o agendamento de consultorias de maneira natural e fluida, utilizando um **LLM (Large Language Model)** para tornar a interação mais próxima de uma conversa humana.
+This project is a **Proof of Concept (PoC)** for a customer service agent developed with **Node.js**, **LangChain**, and **LangGraph**. The main objective is to create an agent capable of facilitating consultancy scheduling in a natural and seamless manner, utilizing a **LLM (Large Language Model)** to make interactions more human-like.
 
-## 💡 Motivação
+## 💡 Motivation
 
-Ao trabalhar com automação de processos, percebi que bots tradicionais baseados em comandos tornam evidente para o usuário que ele está interagindo com uma máquina. Para superar essa limitação, utilizei o **LangGraph**, que implementa conceitos de grafos e abstrai mecanismos como **máquinas de estado determinísticas**, permitindo criar um agente inteligente capaz de acessar diferentes ferramentas para executar tarefas de forma autônoma.
+While working with process automation, I realized that traditional command-based bots make it evident to users that they are interacting with a machine. To overcome this limitation, I used **LangGraph**, which implements graph concepts and abstracts mechanisms like **deterministic state machines**, enabling the creation of an intelligent agent capable of accessing different tools to autonomously execute tasks.
 
-## 🛠️ Tecnologias Utilizadas
+## 🛠️ Technologies Used
 
-- **Node.js** – Ambiente de execução JavaScript
-- **LangChain** – Biblioteca para construção de agentes baseados em LLMs
-- **LangGraph** – Extensão do LangChain para modelagem de fluxos baseados em grafos
-- **JSON** – Simulação de dados de calendário de agendamentos e emails
+- **Node.js** – JavaScript runtime environment
+- **LangChain** – Library for building LLM-based agents
+- **LangGraph** – LangChain extension for graph-based flow modeling
+- **Wppconnect** – An open-source project developed by the JavaScript community to export WhatsApp Web functions
+- **Google API** – Used for calendar and email functionalities
 
-## 🚀 Funcionalidades
+## 🚀 Features
 
-✔️ Simulação de um bot de atendimento no terminal<br>
-✔️ Agendamento de consultorias de forma natural<br>
-✔️ Uso de um LLM para interações mais humanas<br>
+✔️ Simulation of a customer service bot in the terminal<br>
+✔️ Natural consultancy scheduling<br>
+✔️ LLM-powered interactions for a more human-like experience<br>
 
-## 🏗️ Estrutura do Projeto
+## 🏗️ Project Structure
 
 ```
 📂 agent-ai
  ├── 📂 src
  │   ├── 📂 database    
- │   │   ├── 📂 entities         # Base de dados simulada (JSON)
- │   │   └── emails.js           # Simulação de serviços de emails
- │   │   └── events.js           # Simulação de  serviços de calendário
- │   ├── 📂 tools                # Ferramentas para interações com o llm
- │   ├── workflows.js            # Definição do agente
- │   ├── app.js                  # Módulo de agendamentos
- │   ├── prompt.txt              # prompt para interações com o LLM
- │   ├── documento.txt           # Base de conhecimento sobre empresa para fazer RAG
- ├── 📄 package.json             # Dependências e scripts do projeto
- ├── 📄 README.md                # Documentação do projeto
+ │   │   ├── 📂 entities         # Simulated database (JSON)
+ │   │   ├── emails.js           # Simulated email services
+ │   │   ├── events.js           # Simulated calendar services
+ │   ├── 📂 tools                # Tools for LLM interactions
+ │   ├── workflows.js            # Agent definition
+ │   ├── app.js                  # Scheduling module
+ │   ├── prompt.txt              # Prompt for LLM interactions
+ │   ├── documento.txt           # Company knowledge base for RAG
+ ├── 📄 package.json             # Project dependencies and scripts
+ ├── 📄 README.md                # Project documentation
 ```
 
-## ▶️ Como Executar
+## ▶️ How to Run
 
-1. Clone este repositório:
+1. Clone this repository:
 
    ```sh
    git clone https://github.com/lildiop2/agent-ai.git
    ```
 
-2. Acesse a pasta do projeto:
+2. Navigate to the project folder:
 
    ```sh
    cd agent-ai
    ```
 
-3. Instale as dependências:
+3. Install dependencies:
 
    ```sh
    npm install
    ```
 
-4. Use o GitHub para obter um token de acesso pessoal para o uso gratuito dos modelos usados no PoC.
-   - Para obter o token, acesse: GitHub Personal Access Token
+4. Use GitHub to obtain a personal access token for free usage of the models used in this PoC.
+   - To get the token, visit: **GitHub Personal Access Token**
+   - Generate a new token with appropriate permissions for LLM API access.
+   - Configure the token in your runtime environment.
 
-   - Gere um novo token com permissões adequadas para acesso à API dos LLMs.
-
-   - Configure o token no seu ambiente de execução.
-
-5.Execute o agente no terminal:
+5. Run the agent in the terminal:
 
    ```sh
    npm run start
    ```
 
-## 🔮 Próximos Passos
+## 🔮 Next Steps
 
-🔹 Integração com **WhatsApp** para atendimento automatizado<br>
-🔹 Integração com **Gmail** para envio de confirmações<br>
-🔹 Integração com **Google Calendar** para gerenciamento de horários<br>
+🔹 Programming task executing<br>
 
-## 🤝 Contribuição
+## 🤝 Contribution
 
-Se você gostou do projeto e quer contribuir, fique à vontade para abrir uma **issue** ou enviar um **pull request**. Qualquer feedback é bem-vindo! 😊
+If you like the project and want to contribute, feel free to open an **issue** or submit a **pull request**. Any feedback is welcome! 😊
+
+## 📖 Need Help?
+
+For any questions or support, refer to the official documentation of the technologies used:
+
+- [LangChain Docs](https://js.langchain.com/)
+- [LangGraph Docs](https://langchain-ai.github.io/langgraphjs/)
+- [Wppconnect Docs](https://wppconnect.io/)
+- [Google API Docs](https://developers.google.com/)
 
 ---
 
-📌 **Se achou interessante, deixe uma estrela ⭐ e acompanhe as próximas atualizações!**
+📌 **If you found this project interesting, leave a star ⭐ and stay tuned for updates!**

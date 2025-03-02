@@ -1,28 +1,77 @@
 import { tool } from "@langchain/core/tools";
 import { z } from "zod";
-import { createEmail } from "../database/emails.js";
+import { google } from "googleapis";
 import { colorLog } from "../utils/helper.js";
+import { authorize } from "../apis/google.js";
+import { encodedMessage } from "../templates/notifications.js";
+import logger from "../utils/logger.js";
 
 /**
- * Tool para enviar e-mail
+ * Initializes Google Gmail API client with authorization.
  */
-const sendEmail = async ({ type, to, subject, body }) => {
-  colorLog("Send Mail tool called", "blue");
-  const mailOptions = {
-    type,
-    from: process.env.EMAIL_USER,
-    to,
-    subject: subject + "-" + type,
-    text: body,
-  };
+const auth = await authorize();
+const gmail = google.gmail({ version: "v1", auth });
 
-  const createdEmail = createEmail(mailOptions);
-  return JSON.stringify({
-    success: true,
-    message: `Email sent to ${createdEmail.to} regarding ${createdEmail.subject}`,
-  });
+/**
+ * Sends an email using the Gmail API.
+ *
+ * @async
+ * @function sendEmail
+ * @param {Object} params - Email parameters.
+ * @param {string} params.type - Type of email being sent.
+ * @param {string} params.to - Recipient email address.
+ * @param {string} params.subject - Email subject.
+ * @param {string} params.body - Email message content.
+ * @returns {Promise<Object>} Response object with success status and message.
+ */
+export const sendEmail = async ({ type, to, subject, body }) => {
+  try {
+    const mailOptions = {
+      type,
+      from: process.env.EMAIL_USER,
+      to,
+      subject,
+      body,
+    };
+
+    await gmail.users.messages.send({
+      userId: "me",
+      requestBody: { raw: encodedMessage(mailOptions) },
+    });
+
+    const response = {
+      success: true,
+      message: `Email sent to ${to} regarding ${subject}`,
+    };
+    logger.info({
+      message: "Sending email",
+      module: "send_email_tool",
+      operation: "send_email",
+      request: { type, to, subject, body },
+      response,
+      error: null,
+    });
+    return response;
+  } catch (error) {
+    const response = {
+      success: false,
+      message: `Error sending email to ${to}: ${error.message}`,
+    };
+    logger.error({
+      message: "Error sending email",
+      module: "send_email_tool",
+      operation: "send_email",
+      request: { type, to, subject, body },
+      response,
+      error,
+    });
+    return response;
+  }
 };
 
+/**
+ * Tool for sending email notifications related to appointments.
+ */
 export const sendMailTool = tool(sendEmail, {
   name: "send_email",
   description:

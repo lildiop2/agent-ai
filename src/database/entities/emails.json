@@ -5,5 +5,12 @@
     "from": "no-reply@example.com",
     "subject": "Consultoria Agendada-Agendamento de Consultoria",
     "sentAt": "2025-02-22T14:43:39.299Z"
+  },
+  {
+    "id": "1740344936490",
+    "to": "fernandeluma2@gmail.com",
+    "from": "no-reply@example.com",
+    "subject": "Agendamento Confirmado-Agendamento de Consultoria",
+    "sentAt": "2025-02-23T21:08:56.490Z"
   }
 ]

@@ -20,12 +20,13 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 import { toolNode, tools } from "./tools/index.js";
 import { openaiLLM as model } from "./model.js";
 import { colorLog, readData } from "./utils/helper.js";
+import logger from "./utils/logger.js";
 const promptTxt = readData(join(__dirname, "prompt.txt"));
 const EXAMPLES = `
-{"name":"send_email_function", "parameters": {"type":"Appointment Confirmation", "to":"client@example.com", "subject":"Appointment Confirmed", "body":"Your appointment has been confirmed for February 20, 2025, at 10:00 AM."}}
-{"name":"send_email_function", "parameters": {"type":"Appointment Rescheduling", "to":"client@example.com", "subject":"Appointment Rescheduled", "body":"Your appointment has been rescheduled to February 22, 2025, at 2:00 PM."}}
-{"name":"send_email_function", "parameters": {"type":"Appointment Cancellation", "to":"client@example.com", "subject":"Appointment Cancelled", "body":"We regret to inform you that your appointment for February 20, 2025, has been cancelled. Please contact us if you need further assistance."}}
-{"name":"schedule_event_function", "parameters": {"clientName":"John Doe", "title":"Business Meeting", "date":"2025-02-25", "time":"3:00 PM", "description":"Meeting to discuss new contracts and strategic initiatives."}}
+{"name":"send_email", "parameters": {"type":"Appointment Confirmation", "to":"client@example.com", "subject":"Appointment Confirmed", "body":"Your appointment has been confirmed for February 20, 2025, at 10:00 AM."}}
+{"name":"send_email", "parameters": {"type":"Appointment Rescheduling", "to":"client@example.com", "subject":"Appointment Rescheduled", "body":"Your appointment has been rescheduled to February 22, 2025, at 2:00 PM."}}
+{"name":"send_email", "parameters": {"type":"Appointment Cancellation", "to":"client@example.com", "subject":"Appointment Cancelled", "body":"We regret to inform you that your appointment for February 20, 2025, has been cancelled. Please contact us if you need further assistance."}}
+{"name":"make_an_appointment", "parameters": {"clientName":"John Doe", "title":"Business Meeting", "date":"2025-02-25", "time":"3:00 PM", "description":"Meeting to discuss new contracts and strategic initiatives."}}
 `;
 
 const formatResponse = (msg) => ({
@@ -61,7 +62,7 @@ export async function callModel(state) {
     examples: EXAMPLES,
     messages: state.messages,
   });
-  // console.log({ formattedPrompt });
+  logger.info(formattedPrompt);
   return { messages: [await model.invoke(formattedPrompt)] };
 }
 

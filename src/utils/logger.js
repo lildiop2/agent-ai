@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const { combine, timestamp, errors, json, colorize, simple } = format;
+const { combine, timestamp, errors, json, colorize, simple, printf } = format;
 const removeTimestamp = format((info, opts) => {
   if (info.timestamp) {
     delete info.timestamp;
@@ -26,13 +26,28 @@ const logFormat = combine(
   errors({ stack: true }), // Captura stack traces
   json() // Formato JSON estruturado
 );
+const customFormat = printf(
+  ({ level, message, label = "", ...meta }) =>
+    `${level}\t ${label} ${JSON.stringify(message)} ${formatMeta(meta)}`
+);
+const formatMeta = (meta) => {
+  // You can format the splat yourself
+  const splat = meta[Symbol.for("splat")];
+  if (splat && splat.length) {
+    return splat.length === 1
+      ? JSON.stringify(splat[0])
+      : JSON.stringify(splat);
+  }
+  return "";
+};
+
 const logger = createLogger({
   level: process.env.NODE_ENV === "development" ? "debug" : "info",
   format: logFormat,
   defaultMeta: { service: process.env.APP_NAME },
   transports: [
     new transports.Console({
-      format: combine(colorize(), simple()),
+      format: combine(colorize(), customFormat),
     }),
 
     new transports.File({

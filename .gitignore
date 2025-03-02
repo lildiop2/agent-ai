@@ -134,10 +134,11 @@ dist
 .env
 **/database/users.js
 **/database/entities/users.json
-test*
+**test*
 workflow.png
 workflow_v2.png
 workflow_v3.png
 node_modules
 commit-strategy.md
 userDataDir
+credentials

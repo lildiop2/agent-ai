@@ -188,14 +188,17 @@ export const readData = (path) => {
 export const writeData = (path, data) =>
   writeFileSync(path, JSON.stringify(data, null, 2), "utf8");
 
-/**
- * Converts a date and time string (YYYY-MM-DD, HH:MM) to a local Date object.
- */
-export const convertToLocalDate = (date, time) => {
-  const dateAndTime = `${date}T${time}Z`;
-  const utcDate = new Date(dateAndTime);
-
-  return new Date(utcDate.getTime() + utcDate.getTimezoneOffset() * 60000);
+export const convertToLocalDate = (date) => {
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+  };
+  const utcDate = new Date(date);
+  return utcDate.toLocaleDateString("pt-BR", options);
 };
 /**
  * Generates a random integer between two values.

@@ -9,10 +9,7 @@ export class WhatsappService {
         console.log("Terminal qrcode: ", asciiQR);
       },
       statusFind: async (statusSession, session) => {
-        console.log({
-          statusSession,
-          session,
-        });
+        logger.info(`session: ${session} , status:${statusSession}`);
       },
       headless: true,
       browserArgs: [
@@ -44,6 +41,7 @@ export class WhatsappService {
       // executablePath: '/usr/bin/chromium-browser',// Path to chromium executable
       poweredBy: "Abdul Kevin Alexis", // powered by
       deviceName: "Agent AI", // device name
+      // whatsappVersion: "2.3000.1020523660",
       puppeteerOptions: {
         userDataDir: "./userDataDir/" + sessionName,
       },

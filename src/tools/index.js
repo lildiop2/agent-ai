@@ -1,19 +1,20 @@
 import { ToolNode } from "@langchain/langgraph/prebuilt";
 import { sendMailTool } from "./emailTool.js";
+import { Calculator } from "@langchain/community/tools/calculator";
 import {
   makeAnAppointmentTool,
   cancelAnAppointmentTool,
-  listAvailableADatesTool,
+  listAvailableDatesTool,
   getClientAppointmentsTool,
 } from "./scheduleTool.js";
-import { calculatorTool } from "./mathTool.js";
-import { retrieverTool } from "./searchTool.js";
 
+import { retrieverTool } from "./searchTool.js";
+const calculator = new Calculator();
 export const tools = [
+  calculator,
   retrieverTool,
-  calculatorTool,
   sendMailTool,
-  listAvailableADatesTool,
+  listAvailableDatesTool,
   makeAnAppointmentTool,
   cancelAnAppointmentTool,
   getClientAppointmentsTool,
