@@ -4,6 +4,8 @@
 
 This project is a **Proof of Concept (PoC)** for a customer service agent developed with **Node.js**, **LangChain**, and **LangGraph**. The main objective is to create an agent capable of facilitating consultancy scheduling in a natural and seamless manner, utilizing a **LLM (Large Language Model)** to make interactions more human-like.
 
+![AGENT](workflow_v1.png "The agent is a natural conversation with an AI assistant.")
+
 ## 💡 Motivation
 
 While working with process automation, I realized that traditional command-based bots make it evident to users that they are interacting with a machine. To overcome this limitation, I used **LangGraph**, which implements graph concepts and abstracts mechanisms like **deterministic state machines**, enabling the creation of an intelligent agent capable of accessing different tools to autonomously execute tasks.
