@@ -18,7 +18,7 @@ While working with process automation, I realized that traditional command-based
 
 ## 🚀 Features
 
-✔️ Simulation of a customer service bot in the terminal<br>
+✔️ WhatsApp service for scheduling<br>
 ✔️ Natural consultancy scheduling<br>
 ✔️ LLM-powered interactions for a more human-like experience<br>
 
